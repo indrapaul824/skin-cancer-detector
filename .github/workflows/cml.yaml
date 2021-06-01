@@ -10,6 +10,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          pip install --upgrade pip
           # Your ML workflow goes here
           pip install -r requirements.txt
           python predict.py
