@@ -1,8 +1,8 @@
-numpy
+numpy==1.19.5
 matplotlib
 pandas
 seaborn
 sklearn
-PIL
 pillow
 wandb
+six==1.15.0
