@@ -1,9 +1,8 @@
-import tensorflow as tf
-from keras.models import load_model
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+import numpy as np
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
-model = tf.keras.models.load_model('./models/my_model.h5', compile=False)
+model = load_model('./models/my_model.h5')
 
 def process_image(image):
     '''
@@ -11,10 +10,16 @@ def process_image(image):
     '''
     # convert the image pixels to a numpy array
     image = img_to_array(image)
+    print(image.shape)
     # reshape data for the model
     image = image.reshape((-1, 28, 28, 3))
+    print(image.shape)
 
     return image
+
+def decode_predictions(label):
+    cancer = ['akiec','df','bkl','mel','nv','vasc','bcc']
+    return cancer[label]
 
 def predict_class(image):
     '''
@@ -22,24 +27,20 @@ def predict_class(image):
     '''
     # predict the probability across all output classes
     yhat = model.predict(image)
-    # convert the probabilities to class labels
-    label = decode_predictions(yhat)
-    # retrieve the most likely result, e.g. highest probability
-    label = label[0][0]
+    # convert the probabilities to class labels with highest probability
+    label = np.argmax(yhat, axis = 1)
     # return the classification
-    prediction = label[1]
-    percentage = '%.2f%%' % (label[2]*100)
+    prediction = decode_predictions(label)
 
-    return prediction, percentage
+    return prediction
 
 if __name__ == '__main__':
     ''' for test'''
     # load an image from file
-    image = load_img('../image1.jpg', target_size=(224, 224))
+    image = load_img('reports/image1.jpg', target_size=(224, 224))
     image = process_image(image)
-    prediction, percentage = predict_class(image)
+    prediction = predict_class(image)
     # write scores to a file
-    with open("metrics.txt", "w") as f:
-        f.write("Predicted Class: %2.2f%%\n" % prediction)
-        f.write("Test accuracy score: %2.2f%%\n" % test_score)
-    print(prediction, percentage)
+    #with open("reports/metrics.txt", "w") as f:
+    #    f.write("Predicted Class: %2.2f%%\n" % prediction)
+    print(prediction)
