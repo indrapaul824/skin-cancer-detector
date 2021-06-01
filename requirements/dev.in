@@ -1,0 +1,8 @@
+numpy
+matplotlib
+pandas
+seaborn
+sklearn
+PIL
+pillow
+wandb

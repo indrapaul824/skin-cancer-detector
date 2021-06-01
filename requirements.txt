@@ -1,9 +1,0 @@
-Flask~=1.1.2
-tensorflow~=2.4.0
-Keras~=2.4.3
-Keras-Preprocessing
-matplotlib
-
-requests~=2.25.1
-fastai~=2.1.10
-pillow~=8.2.0
