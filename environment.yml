@@ -1,6 +1,11 @@
-name: TextAuth
+name: SkinCancer
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - python=3.8
+  - cudatoolkit=11.2
+  - cudnn=8.1
   - pip
+  - pip:
+    - pip-tools

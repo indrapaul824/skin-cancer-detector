@@ -7,8 +7,10 @@ conda-update:
 	conda env update --prune -f environment.yml
 
 # Compile and install exact pip packages
-pip-install:
-	pip install -r requirements.txt
+pip-tools:
+	pip install pip-tools
+	pip-compile requirements/prod.in && pip-compile requirements/dev.in
+	pip-sync requirements/prod.txt requirements/dev.txt
 
 # Lint
 lint:
