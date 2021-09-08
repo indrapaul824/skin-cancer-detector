@@ -30,11 +30,11 @@ kiwisolver==1.3.1
     # via matplotlib
 matplotlib==3.4.2
     # via
-    #   -r requirements/dev.in
+    #   -r dev.in
     #   seaborn
 numpy==1.19.5
     # via
-    #   -r requirements/dev.in
+    #   -r dev.in
     #   matplotlib
     #   pandas
     #   scikit-learn
@@ -42,13 +42,13 @@ numpy==1.19.5
     #   seaborn
 pandas==1.2.4
     # via
-    #   -r requirements/dev.in
+    #   -r dev.in
     #   seaborn
 pathtools==0.1.2
     # via wandb
-pillow==8.2.0
+pillow==8.3.2
     # via
-    #   -r requirements/dev.in
+    #   -r dev.in
     #   matplotlib
 promise==2.3
     # via wandb
@@ -76,14 +76,14 @@ scipy==1.6.3
     #   scikit-learn
     #   seaborn
 seaborn==0.11.1
-    # via -r requirements/dev.in
+    # via -r dev.in
 sentry-sdk==1.1.0
     # via wandb
 shortuuid==1.0.1
     # via wandb
 six==1.15.0
     # via
-    #   -r requirements/dev.in
+    #   -r dev.in
     #   cycler
     #   docker-pycreds
     #   promise
@@ -91,7 +91,7 @@ six==1.15.0
     #   python-dateutil
     #   wandb
 sklearn==0.0
-    # via -r requirements/dev.in
+    # via -r dev.in
 smmap==4.0.0
     # via gitdb
 subprocess32==3.5.4
@@ -103,4 +103,4 @@ urllib3==1.26.5
     #   requests
     #   sentry-sdk
 wandb==0.10.31
-    # via -r requirements/dev.in
+    # via -r dev.in
