@@ -1,1 +1,1 @@
-<h1> Skin Cancer Analyzer and Detector </h1>
+<h1 align=center> Skin Cancer Analyzer and Detector </h1>
