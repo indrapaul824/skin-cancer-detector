@@ -1,1 +1,1 @@
-# Skin-Cancer-Detector
+<h1> Skin Cancer Analyzer and Detector </h1>
