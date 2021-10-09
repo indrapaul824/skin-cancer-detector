@@ -1,7 +1,0 @@
-tensorflow
-Keras
-numpy
-flask
-h5py
-requests
-toml
