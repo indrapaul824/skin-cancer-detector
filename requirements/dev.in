@@ -1,8 +1,10 @@
-numpy==1.19.5
+tensorflow
+Keras
 matplotlib
 pandas
 seaborn
 sklearn
+scipy
 pillow
 wandb
 six==1.15.0

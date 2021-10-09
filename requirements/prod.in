@@ -1,7 +1,12 @@
-tensorflow
-Keras
+tensorflow-cpu
 numpy
-flask
-h5py
 requests
-toml
+fastapi
+uvicorn
+python-dotenv
+aiofiles
+python-multipart
+jinja2
+Markdown
+pytest
+Pillow
