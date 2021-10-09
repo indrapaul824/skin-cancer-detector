@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% set active_page = "upload" %}
+
+{% block title %}Upload{% endblock %}
+<head>
+    {% block head %}
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', path='/css/style3.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/mystyle.css') }}" rel="stylesheet">
+
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/543c4560e5.js" crossorigin="anonymous"></script>
+
+    {% endblock %}
+</head>
+
+
+{% block page_content %}
+<div class="col-12 up-area">
+    <h1>Upload</h1>
+    {{result}}
+    <input type="file" name="file" id="file">
+    <!-- Drag and Drop container-->
+    <div class="upload-area" id="uploadfile">
+        <h2 id="howto">Drag and Drop file here<br />Or<br />Click to Upload</h2>
+        <button type="submit" class="box_button">Upload</button>
+    </div>
+</div>
+
+
+<div class="col-12">
+    <div class="colorpalette">
+        <h3>Uploaded Image</h3>
+        <div id="result" class="row">
+            <div id="original" class="col-12">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+<script type="module" src="{{ url_for('static', path='/js/imagehelper.js') }}"></script>
+<script type="module" src="{{ url_for('static', path='/js/dragdrop.js') }}"></script>
+
+{% endblock %}
+view raw
