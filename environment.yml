@@ -1,7 +1,6 @@
 name: SkinCancer-39
 channels:
   - defaults
-  - conda-forge
 dependencies:
   - python=3.9
   - pip
