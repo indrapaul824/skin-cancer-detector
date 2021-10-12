@@ -9,3 +9,4 @@ pillow
 wandb
 six==1.15.0
 ipykernel
+opencv-python
