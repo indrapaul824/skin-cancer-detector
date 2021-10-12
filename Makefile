@@ -11,6 +11,15 @@ pip-tools:
 	pip-compile requirements/prod.in && pip-compile requirements/dev.in
 	pip-sync requirements/prod.txt requirements/dev.txt
 
+# Convert keras model to TFJS
+con-tfjs:
+	@read -p "Enter model name:" model; \
+	model_dir=./sc_detector/artifacts/$$model; \
+	tensorflowjs_converter --input_format keras \
+                       $$model_dir.h5 \
+                       ./sc_detector/artifacts/tfjs
+
+
 # Lint
 lint:
 	tasks/lint.sh
