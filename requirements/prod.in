@@ -10,3 +10,5 @@ jinja2
 Markdown
 pytest
 Pillow
+IPython
+imutils
