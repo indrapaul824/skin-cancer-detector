@@ -1,4 +1,5 @@
 tensorflow-cpu
+tensorflowjs
 numpy
 requests
 fastapi
