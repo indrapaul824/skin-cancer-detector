@@ -17,7 +17,9 @@ con-tfjs:
 	model_dir=./sc_detector/artifacts/$$model; \
 	tensorflowjs_converter --input_format keras \
                        $$model_dir.h5 \
-                       ./sc_detector/artifacts/tfjs
+                       ./sc_detector/artifacts/tfjs/$$model
+	
+	
 
 
 # Lint
