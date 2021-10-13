@@ -15,11 +15,11 @@ pip-tools:
 con-tfjs:
 	@read -p "Enter model name:" model; \
 	model_dir=./sc_detector/artifacts/$$model; \
+	target_dir=./sc_detector/artifacts/tfjs/$$model; \
 	tensorflowjs_converter --input_format keras \
                        $$model_dir.h5 \
-                       ./sc_detector/artifacts/tfjs/$$model
-	
-	
+                       $$target_dir
+	@echo -n "TFJS model.json saved at './sc_detector/artifacts/tfjs'"
 
 
 # Lint
