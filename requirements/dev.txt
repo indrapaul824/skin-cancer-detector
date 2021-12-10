@@ -24,6 +24,10 @@ clang==5.0
     # via tensorflow
 click==8.0.2
     # via wandb
+colorama==0.4.4
+    # via
+    #   click
+    #   ipython
 configparser==5.0.2
     # via wandb
 cycler==0.10.0
@@ -121,8 +125,6 @@ parso==0.8.2
     # via jedi
 pathtools==0.1.2
     # via wandb
-pexpect==4.8.0
-    # via ipython
 pickleshare==0.7.5
     # via ipython
 pillow==8.3.2
@@ -140,8 +142,6 @@ protobuf==3.18.1
     #   wandb
 psutil==5.8.0
     # via wandb
-ptyprocess==0.7.0
-    # via pexpect
 pyasn1==0.4.8
     # via
     #   pyasn1-modules
@@ -160,6 +160,8 @@ python-dateutil==2.8.2
     #   wandb
 pytz==2021.3
     # via pandas
+pywin32==302
+    # via jupyter-core
 pyyaml==5.4.1
     # via wandb
 pyzmq==22.3.0
@@ -253,6 +255,8 @@ wheel==0.37.0
     #   astunparse
     #   tensorboard
     #   tensorflow
+wincertstore==0.2
+    # via -r requirements/dev.in
 wrapt==1.12.1
     # via tensorflow
 yaspin==2.1.0

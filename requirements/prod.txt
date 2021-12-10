@@ -19,6 +19,8 @@ astunparse==1.6.3
     # via
     #   tensorflow
     #   tensorflow-cpu
+atomicwrites==1.4.0
+    # via pytest
 attrs==21.2.0
     # via pytest
 backcall==0.2.0
@@ -35,6 +37,11 @@ clang==5.0
     #   tensorflow-cpu
 click==8.0.2
     # via uvicorn
+colorama==0.4.4
+    # via
+    #   click
+    #   ipython
+    #   pytest
 decorator==5.1.0
     # via ipython
 fastapi==0.70.0
@@ -118,8 +125,6 @@ packaging==21.0
     # via pytest
 parso==0.8.2
     # via jedi
-pexpect==4.8.0
-    # via ipython
 pickleshare==0.7.5
     # via ipython
 pillow==8.3.2
@@ -134,8 +139,6 @@ protobuf==3.18.1
     #   tensorflow
     #   tensorflow-cpu
     #   tensorflow-hub
-ptyprocess==0.7.0
-    # via pexpect
 py==1.10.0
     # via pytest
 pyasn1==0.4.8
