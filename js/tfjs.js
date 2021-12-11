@@ -1,4 +1,4 @@
-model = await tf.loadModel('../../../sc_detector/artifacts/tfjs/my_model/model.json');
+model = await tf.loadModel('../sc_detector/artifacts/tfjs/my_model/model.json');
 
 function preprocess(img) {
     //convert the image data to a tensor 
