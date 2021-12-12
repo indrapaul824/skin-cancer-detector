@@ -33,7 +33,7 @@ function predictOnLoad() {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('../sc_detector/artifacts/tfjs/my_model/model.json');
+	model = await tf.loadModel('https://github.com/IndraP24/Skin-Cancer-Detector/blob/main/sc_detector/artifacts/tfjs/my_model/model.json');
 	$("#selected-image").attr("src", "../images/samplepic.jpg");
 	
 	// Hide the model loading spinner
