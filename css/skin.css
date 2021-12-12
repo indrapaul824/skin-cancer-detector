@@ -1,0 +1,444 @@
+
+.bground-color {
+	background-color: #F8F8F8; /* #1B2A49;  #1B2A49; #F8F8F8;  rgb(248,248,248) */
+}
+
+.text-color {
+	color: #404040;  /*rgb(64,64,64) */
+}
+
+.top-font {
+	font-size: 18px;
+	letter-spacing: .07em;
+	
+}
+
+.info-font {
+	font-size: 16px;
+}
+
+.fname-font {
+	font-size: 14px;
+}
+
+
+
+.topp-padding {
+	padding-top: 30px;
+}
+
+
+
+li {
+	font-family: 'Roboto', serif;
+	font-size: 14px;
+}
+
+a:hover { 
+  color: #FF0000;
+}
+
+
+
+.add-margin {
+	margin-bottom: 30px;
+	margin-top: 5px;
+}
+
+
+.add-padding {
+	
+	padding-bottom: 30px;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+
+
+input {
+	font-size: 20px;
+	font-family: Helvetica, sans-serif;
+}
+
+
+.title {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.hide {
+	display: none;
+}
+
+.new-font {
+	font-family: georgia, serif;
+	letter-spacing: .05em;
+}
+
+.space-letters-large {
+	letter-spacing: .1em;
+}
+
+
+.space-letters {
+	letter-spacing: .05em;
+}
+
+
+
+.unblock {
+display: inline-block;
+}
+
+
+
+input[type="file"] {
+    opacity: 0;
+    
+}
+
+
+.dont-break-out {
+	/*These are technically the same but use both 
+	to ensure all browsers are supported*/
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+
+.new-font {
+	font-family: monospace, serif;
+	font-size: 15px;
+	
+}
+
+
+
+
+.logo h1 {
+	font-size: 50px;
+	font-family: 'Oswald', sans-serif;
+	line-height: 1.1;
+}
+
+.logo1 {
+	font-family: 'Oswald', sans-serif;
+}
+
+
+.header-style {
+	height: 50px;
+	background-color: #0375b4; /*#303030;*/
+}
+
+
+.adjust-fontcolor {
+	color: black;
+}
+
+
+.normal-header {
+	display: block;
+}
+
+
+.btn-font {
+	font-size: 18px;
+	letter-spacing: .05em;
+}
+
+/*
+-------------------------
+Specifically for tablets
+-------------------------
+*/
+
+.tag-font {
+	font-size: 16px;
+	
+}
+
+.new-font {
+	font-family: monospace, serif;
+	font-size: 16px;
+}
+
+
+
+.side-margin {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.adjust-image {
+	max-width: 400px;
+	
+}
+
+.bottom-padding {
+	padding-bottom: 300px;
+}
+
+.bottom-margin {
+	margin-bottom: 300px;
+}
+
+
+/*
+-----------------
+MEDIA QUERIES
+-----------------
+*/
+
+@media only screen and (min-device-width: 1200px) {
+/* Devices that are Laptops and Desktops */
+
+
+
+.btn-font {
+	font-size: 15px;
+	letter-spacing: .03em;
+}
+
+.new-font {
+	font-family: monospace, serif;
+	font-size: 15px;
+}
+
+
+
+.side-margin {
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+
+input {
+	font-size: 16px;
+}
+
+
+
+.logo h1 {
+	font-size: 35px;
+}
+
+.adjust-image {
+	max-width: 300px;
+	
+}
+
+
+.card {
+	box-shadow: 0 4px 8px 4px rgba(0,0,0,0.2);
+	margin-top: 16px;
+	margin-bottom: 16px;
+	
+}
+
+.tag-font {
+	font-size: 12px;
+	
+}
+
+.bottom-padding {
+	padding-bottom: 300px;
+}
+
+
+}/*Close Media Query*/
+
+@media only screen and (max-width: 480px) {
+/*Cellphone Screens*/
+
+
+
+.normal-header {
+	display: none;
+}
+
+
+.logo h1 {
+	font-size: 50px;
+}
+
+.adjust-image {
+	max-width: 200px;
+	margin-bottom: 40px;
+}
+
+
+
+.header-stylehome {
+	display: none;
+}
+
+
+
+} /*Close Media Query*/
+
+
+
+
+@media only screen and (max-width: 480px) and (orientation: portrait){
+/*Cellphone Screens in portrait*/
+
+.btn-font {
+	font-size: 18px;
+	letter-spacing: .03em;
+}
+
+.add-margintop {
+	margin-top: 10%;
+}
+
+.side-margin {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.adjust-image {
+	max-width: 90%;
+	margin-bottom: 0px;
+}
+
+.space-letters {
+	letter-spacing: .03em;
+}
+
+.logo h1 {
+	font-size: 35px;
+}
+
+.bottom-padding {
+	padding-bottom: 200px;
+}
+
+.mono-font h5 {
+	font-size: 16px;
+}
+
+.new-font {
+	font-family: monospace, serif;
+	font-size: 14px;
+	
+}
+
+
+.tag-font {
+	font-size: 10px;
+}
+
+.add-padding {
+	padding-bottom: 30px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+
+.mob-font {
+	font-size: 16px;
+	
+}
+
+.mob-font1 {
+	font-size: 18px;
+	
+}
+
+li, ol {
+	font-size: 18px;
+}
+
+.fname-font {
+	font-size: 16px;
+}
+
+
+
+} /*Close Media Query*/
+
+
+
+
+@media only screen and (max-width: 480px) and (orientation: landscape){
+/*Cellphone Screens in landscape*/
+
+.btn-font {
+	font-size: 12px;
+	letter-spacing: .03em;
+}
+
+.add-margintop {
+	margin-top: 10%;
+}
+
+.side-margin {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.adjust-image {
+	max-width: 60%;
+	margin-bottom: 10px;
+}
+
+.space-letters {
+	letter-spacing: .03em;
+}
+
+.logo h1 {
+	font-size: 35px;
+}
+
+.bottom-padding {
+	padding-bottom: 150px;
+}
+
+.mono-font h5 {
+	font-size: 16px;
+}
+
+.new-font {
+	font-family: monospace, serif;
+	font-size: 11px;
+	
+}
+
+
+.add-padding {
+	padding-bottom: 30px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.tag-font {
+	font-size: 12px;
+}
+
+
+.normal-header {
+	display: none;
+}
+
+
+} /*Close Media Query*/
+
+
+@media only all and (min-width: 520px) {
+/*Tablets*/
+
+
+} /*Close Media Query*/
+
+
+@media only all and (max-width: 520px) and (orientation: landscape) {
+/*Tablets in landscape*/
+
+
+
+
+} /*Close Media Query*/
