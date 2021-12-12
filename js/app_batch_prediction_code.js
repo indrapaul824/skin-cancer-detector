@@ -26,16 +26,14 @@ async function model_makePrediction(fname) {
 	image = $('#selected-image').get(0);
 	
 	// Pre-process the image
-	let tensor = tf.fromPixels(image)
-	.resizeNearestNeighbor([224,224])
+	let tensor = tf.browser.fromPixels(image)
+	.resizeNearestNeighbor([28, 28])
+	.mean(2)
+	.expandDims(2)
+	.expandDims()
 	.toFloat();
-	
-	
-	let offset = tf.scalar(127.5);
-	
-	tensor = tensor.sub(offset)
-	.div(offset)
-	.expandDims();
+
+	tensor = tensor.div(255.0);
 
 	
 	// Pass the tensor to the model and call predict on it.
@@ -43,7 +41,7 @@ async function model_makePrediction(fname) {
 	// data() loads the values of the output tensor and returns
 	// a promise of a typed array when the computation is complete.
 	// Notice the await and async keywords are used together.
-	let predictions = await model.predict(tensor).data();
+	let predictions = model.predict(tensor).data();
 	let top5 = Array.from(predictions)
 		.map(function (p, i) { // this is Array.map
 			return {
