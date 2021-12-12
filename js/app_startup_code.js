@@ -33,7 +33,7 @@ function predictOnLoad() {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('../sc_detector/artifacts/tfjs/my_model/model.json');
+	model = await tf.loadLayersModel('./sc_detector/artifacts/tfjs/my_model/model.json');
 	$("#selected-image").attr("src", "../images/samplepic.jpg");
 	
 	// Hide the model loading spinner
