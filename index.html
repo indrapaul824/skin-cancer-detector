@@ -1,178 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <!-- Load the latest version of TensorFlow.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-  <!-- Load index.js after the content of the page -->
-  <script src="./js/tfjs.js"></script>
-</head>
-<body>
-  <div id="console"></div>
-  <!-- Add an image that we will use to test -->
-  <img id="img" crossorigin src="./images/ISIC_0024334.jpg" width="227" height="227" />
-</body>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skin Cancer Detector</title>
+    <script
+      src="https://kit.fontawesome.com/b3aed9cb07.js"
+      crossorigin="anonymous"
+    ></script>
 
-<!DOCTYPE html>
-<html lang="en">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
 
-<head>
-<meta charset="utf-8">
-<title>Skin Lesion Analyzer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Use the power of Machine Learning to diagnose Skin Lesions.">
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
 
+  <body>
+    <main>
+      <div class="conatiner mt-1">
+        <div class="digit-demo-container">
+          <h1>Skin Cancer Detector</h1>
 
-
-<!--CSS Stylesheets-->
-<link rel="stylesheet" href="./css/skin.css">
-
-<!--Link to Font Awesome icons-->
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns' crossorigin='anonymous'>
-
-
-
-<!--Link to fonts from google fonts-->
-<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-
-<link rel="shortcut icon" type="image/png" href="./images/favicon.ico">
-
-
-<style>
-html,body,h2,h3,h4,p,h5,li {font-family: Roboto, sans-serif}
-</style>
-
-
-</head>
-
-
-
-
-<body class="bground-color">
-
-
-
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content. -->
-<div class="w3-content" style="max-width:960px">
-
-
-
-<!-- 1. HOME PAGE -->
-<div class="tabbed w3-animate-opacity w3-white" id="home">
-	
-	
-<!-- Top Bar -->
-<div class='w3-center'>
-	
-	<p class="space-letters-large w3-small w3-tag bground-color w3-text-teal w3-border w3-round">
-		<a class="change-size" href="faq.html"><b>About</b></a>
-</div>
-
-
-
-
-	
-
-<!-- Front page image -->
-<!-- This image will be replaced once the js code runs. -->
-<div class="w3-center w3-padding-bottom">
-	
-
-	<img id="selected-image" class="w3-round adjust-image" src="./images/ISIC_0052212.jpg" height="250" alt="Image for analysis"> 
-	
-</div> 
-
-
-
-
-<!-- Button -->
-<div id="btnn" class="w3-center">
-	
-	<button class="w3-btn w3-deep-orange w3-hover-blue w3-round w3-margin-bottom adjust-spacing btn-font w3-padding w3-space-letters w3-text-white" onclick="setTimeout(simulateClick.bind(null, 'image-selector'), 200)"><i class='fas fa-camera w3-padding-right' style='font-size:15px'></i>
-		<b>Skin Lesion Analyzer</b></button>
-	<!--<p class="w3-text-teal">jpeg or png</p>-->
-</div> 
-
-
-
-<div class="w3-center">
-	<div  class="progress-bar w3-text-teal space-letters">
-	<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
-	<p>Model is loading...</p></div>
-</div>
-
-<!-- Progress Bar 
-Just here for graphics.
-The functionality was not implemented because it slows down the model download 
-and causes it to fail.-->
-<div class="w3-light-grey side-margin w3-opacity">
-<div  id="myBar" class="w3-container w3-blue" style="height:5px;width:100%"></div>
-</div>
-
-
-<!-- Results Box -->
-<div class="w3-center w3-border add-margin side-margin w3-round w3-sand
-text-color space-letters bottom-margin dont-break-out">
-
-	<p>Results</p>
-	
-	<!-- Remember that an ordered or unordered list has tabs by default.
-	CSS is not styling the prediction outputs. The tabs you see are the default
-	tabs associated with lists.-->
-	<ol class='w3-left-align text-color' id='prediction-list'></ol>
-		
-</div>
-
-
-
-
-<!-- Bottom Bar -->
-<div class='w3-center w3-padding-bottom'>
-	<p class="space-letters">
-		<a class="w3-small w3-hover-text-deep-orange text-color" href="https://woza.work/">
-		<b>woza.work</b></a>
-	</p>
-</div>
-
-
-</div><!--END OF HOME PAGE-->
-
-
-
-<!-- We simulate clicks on these two. -->
-<div class="hide">
-	<button id='predict-button'>Predict</button>
-</div>
-
-<div class="hide">
-	<input id="image-selector" type="file" multiple>
-</div>
-<!--===================================-->
-
-
-	<!-- Load jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-
-	</script>
-	
-	
-	<!-- Load TensorFlow.js
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.6.0/dist/tf.min.js"> 
-	</script>-->
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> 
-	</script>
-	
-	
-	<!-- Load the js files -->
-	<script src="./js/target_classes.js"></script>
-	<script src="./js/app_startup_code.js"></script>
-	<script src="./js/app_batch_prediction_code.js"></script>	
-	
-	
-	
-</div> <!-- w3-content -->
-
-</body>
+          <div class="flex-two">
+            <div id="canvas" class="canvas-box-wrapper">
+              <div id="canvas-box" class="canvas-box">
+                <h2>Upload Here</h2>
+                <br />
+                <canvas id="canvasc" width="300" height="300"></canvas>
+              </div>
+              <div class="col-12">
+                <button id="predict-button" class="btn btn-dark">
+                  Predict
+                </button>
+              </div>
+              <div class="col-12">
+                <button id="clear-btn" class="btn btn-dark">Clear</button>
+              </div>
+            </div>
+            <div class="canvas-box-wrapper">
+              <div id="result_box" class="col-12 col-md-7">
+                <canvas id="chart_box" width="100" height="100"></canvas>
+              </div>
+              <div
+                class="col-12 d-block mt-2 mt-md-0 text-md-left prediction-text"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/tfjs.js"></script>
+  </body>
 </html>
