@@ -73,9 +73,7 @@ $("#predict-button").click(async function () {
 	image = $('#selected-image').get(0);
 	
 	// Pre-process the image
-	let tensor = tf.fromPixels(image)
-	.resizeNearestNeighbor([224,224])
-	.toFloat();
+	let tensor = tf.tensor(tf.browser.fromPixels(image), [28, 28, 3]);
 	
 	
 	let offset = tf.scalar(127.5);
