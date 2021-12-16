@@ -6,7 +6,7 @@ async function loadModel() {
 	loader.style.display = "block";
 	modelName = "mobilenet";
 	model = undefined;
-	model = await tf.loadLayersModel('https://github.com/IndraP24/Skin-Cancer-Detector/blob/main/sc_detector/artifacts/tfjs/my_model/model.json');
+	model = await tf.loadLayersModel('./sc_detector/artifacts/tfjs/my_model/model.json');
 	loader.style.display = "none";
 	load_button.disabled = true;
 	load_button.innerHTML = "Loaded Model";
