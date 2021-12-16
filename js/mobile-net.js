@@ -6,7 +6,7 @@ async function loadModel() {
 	loader.style.display = "block";
 	modelName = "mobilenet";
 	model = undefined;
-	model = await tf.loadLayersModel('./output/mobilenet/model.json');
+	model = await tf.loadLayersModel('../sc_detector/artifacts/tfjs/my_model/model.json');
 	loader.style.display = "none";
 	load_button.disabled = true;
 	load_button.innerHTML = "Loaded Model";
@@ -17,7 +17,7 @@ async function loadFile() {
 	console.log("image is in loadfile..");
 	document.getElementById("select-file-box").style.display = "table-cell";
   	document.getElementById("predict-box").style.display = "table-cell";
-  	document.getElementById("prediction").innerHTML = "Click predict to find my label!";
+  	document.getElementById("prediction").innerHTML = "Click predict to find the type of Skin Cancer!";
   	var fileInputElement = document.getElementById("select-file-image");
   	console.log(fileInputElement.files[0]);
     renderImage(fileInputElement.files[0]);
@@ -53,7 +53,7 @@ async function predButton() {
 		.map(function (p, i) {
 			return {
 				probability: p,
-				className: IMAGENET_CLASSES[i]
+				className: TARGET_CLASSES[i]
 			};
 		}).sort(function (a, b) {
 			return b.probability - a.probability;
@@ -75,7 +75,7 @@ async function predButton() {
 
 function preprocessImage(image, modelName) {
 	let tensor = tf.browser.fromPixels(image)
-		.resizeNearestNeighbor([224, 224])
+		.resizeNearestNeighbor([28, 28])
 		.toFloat();
 
 	if (modelName === undefined) {
@@ -92,11 +92,11 @@ function preprocessImage(image, modelName) {
 
 function loadDemoImage() {
 	document.getElementById("predict-box").style.display = "table-cell";
-  	document.getElementById("prediction").innerHTML = "Click predict to find my label!";
+  	document.getElementById("prediction").innerHTML = "Click predict to find the type of Skin Cancer!";
 	document.getElementById("select-file-box").style.display = "table-cell";
 	document.getElementById("predict-list").innerHTML = "";
 
-	base_path = "dataset/test/tennis.jpeg"
+	base_path = "../images/samplepic.jpg"
 	// maximum = 4;
 	// minimum = 1;
 	// var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
