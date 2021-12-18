@@ -124,7 +124,9 @@ async function predButton() {
 
   document.getElementById("predict-box").style.display = "block";
   document.getElementById("prediction").innerHTML =
-    "MobileNet prediction <br><b>" + results[0].className + "</b>";
+    "The predicted type of Skin Cancer is: <br><b>" +
+    results[0].className +
+    "</b>";
 
   var ul = document.getElementById("predict-list");
   ul.innerHTML = "";
