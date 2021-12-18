@@ -13,7 +13,7 @@ body {
   background-color: #1278cc;
   border-radius: 5px;
   margin: 20px auto;
-  width: 1140px;
+  width: 940px;
 }
 .mobilenet-demo-container .demo-wrapper {
   display: table;
@@ -92,6 +92,7 @@ body {
   display: flex;
   width: 100%;
   background-color: #3949ab;
+  padding-top: 10px;
 }
 .mobilenet-demo-container .out-box {
   display: table-cell;
@@ -104,11 +105,11 @@ body {
   color: white;
   margin-top: 0px;
   margin-bottom: 0px !important;
-  font-size: 15px;
+  font-size: 25px;
 }
 .mobilenet-demo-container .out-box b {
   color: #ffcc00;
-  font-size: 25px;
+  font-size: 30px;
 }
 @media screen and (max-width: 640px) {
   .mobilenet-demo-container .out-box b {
@@ -166,7 +167,14 @@ body {
   margin: 0px;
   color: white;
   padding-bottom: 20px;
-  font-size: 15px;
+  font-size: 20px;
+}
+
+#chart_box {
+  margin-top: 50px;
+  background-color: #2b3436;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=app.css.map */
