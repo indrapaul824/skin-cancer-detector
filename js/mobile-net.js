@@ -50,7 +50,7 @@ function loadChart(label, data) {
       labels: label,
       datasets: [
         {
-          label: "Prediction Confidence",
+          label: "Probability Chart",
           backgroundColor: "rgb(82, 196, 211)",
           borderColor: "rgb(82, 196, 211)",
           color: "white",
@@ -138,7 +138,16 @@ async function predButton() {
     ul.appendChild(li);
   });
 
-  label = ["0", "1", "2", "3", "4", "5", "6"];
+  // label = ["0", "1", "2", "3", "4", "5", "6"];
+  label = [
+    "0: akiec",
+    "1: bcc",
+    "2: bkl",
+    "3: df",
+    "4: mel",
+    "5: nv",
+    "6: vasc",
+  ];
   if (firstTime == 0) {
     loadChart(label, predictions);
     firstTime = 1;
@@ -146,8 +155,6 @@ async function predButton() {
     chart.destroy();
     loadChart(label, predictions);
   }
-  console.log(results.indexOf(results[0]));
-  console.log(results);
 
   document.getElementById("chart-box").style.display = "block";
 }
