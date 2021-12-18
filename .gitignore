@@ -7,3 +7,7 @@ __pycache__/
 .vscode
 
 /Skin-Lesion-Analyzer
+
+/sc_detector/data/raw
+
+/sc_detector/data/base_dir
