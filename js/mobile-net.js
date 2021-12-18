@@ -37,6 +37,63 @@ function renderImage(file) {
   reader.readAsDataURL(file);
 }
 
+var chart = "";
+var firstTime = 0;
+function loadChart(label, data) {
+  var ctx = document.getElementById("chart-box").getContext("2d");
+  chart = new Chart(ctx, {
+    //type of chart
+    type: "bar",
+
+    //data for Chart
+    data: {
+      labels: label,
+      datasets: [
+        {
+          label: "Prediction Confidence",
+          backgroundColor: "rgb(82, 196, 211)",
+          borderColor: "rgb(82, 196, 211)",
+          color: "white",
+          tickColor: "white",
+          data: data,
+        },
+      ],
+    },
+    //config options
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            color: "white",
+            font: {
+              size: 18,
+            },
+          },
+        },
+      },
+      scales: {
+        y: {
+          ticks: {
+            color: "white",
+            font: {
+              size: 15,
+            },
+          },
+        },
+        x: {
+          ticks: {
+            color: "white",
+            font: {
+              size: 15,
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
 async function predButton() {
   console.log("model loading..");
 
@@ -56,6 +113,7 @@ async function predButton() {
       return {
         probability: p,
         className: TARGET_CLASSES[i],
+        index: i,
       };
     })
     .sort(function (a, b) {
@@ -71,11 +129,27 @@ async function predButton() {
   var ul = document.getElementById("predict-list");
   ul.innerHTML = "";
   results.forEach(function (p) {
-    console.log(p.className + " " + p.probability.toFixed(6));
+    console.log(
+      p.className + "(" + p.index + ")" + " " + p.probability.toFixed(6)
+    );
     var li = document.createElement("LI");
-    li.innerHTML = p.className + " " + p.probability.toFixed(6);
+    li.innerHTML =
+      p.className + "(" + p.index + ")" + " " + p.probability.toFixed(6);
     ul.appendChild(li);
   });
+
+  label = ["0", "1", "2", "3", "4", "5", "6"];
+  if (firstTime == 0) {
+    loadChart(label, predictions);
+    firstTime = 1;
+  } else {
+    chart.destroy();
+    loadChart(label, predictions);
+  }
+  console.log(results.indexOf(results[0]));
+  console.log(results);
+
+  document.getElementById("chart-box").style.display = "block";
 }
 
 function preprocessImage(image, modelName) {
