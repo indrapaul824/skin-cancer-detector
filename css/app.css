@@ -13,7 +13,7 @@ body {
   background-color: #1278cc;
   border-radius: 5px;
   margin: 20px auto;
-  width: 840px;
+  width: 1140px;
 }
 .mobilenet-demo-container .demo-wrapper {
   display: table;
@@ -57,7 +57,7 @@ body {
   }
 }
 .mobilenet-demo-container h1 {
-  font-size: 35px;
+  font-size: 55px;
   background-color: #4dd0e1;
   padding: 10px;
   margin: 0px;
@@ -77,7 +77,7 @@ body {
   padding: 5px 10px;
   cursor: pointer;
   border: 1px solid #f50057;
-  font-size: 18px;
+  font-size: 25px;
   margin: 20px 5px;
   white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
