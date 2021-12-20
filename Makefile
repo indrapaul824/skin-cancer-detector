@@ -20,8 +20,3 @@ con-tfjs:
                        $$model_dir.h5 \
                        $$target_dir
 	@echo -n "TFJS model.json saved at './sc_detector/artifacts/tfjs'"
-
-
-# Lint
-lint:
-	tasks/lint.sh
