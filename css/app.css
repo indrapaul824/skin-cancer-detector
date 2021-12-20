@@ -10,14 +10,14 @@ body {
 }
 
 .mobilenet-demo-container {
-  background-color: #1278cc;
+  background-color: #2b3436;
   border-radius: 5px;
   margin: 20px auto;
   width: 940px;
 }
 .mobilenet-demo-container .demo-wrapper {
   display: table;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -57,8 +57,8 @@ body {
   }
 }
 .mobilenet-demo-container h1 {
-  font-size: 55px;
-  background-color: #4dd0e1;
+  font-size: 40px;
+  background-color: #24a8b9;
   padding: 10px;
   margin: 0px;
   border: 1px solid #24a8b9;
@@ -67,23 +67,25 @@ body {
   border-top-right-radius: 5px;
   font-family: Nunito;
   text-align: center;
+  color: white;
 }
 .mobilenet-demo-container .input-button {
-  background-color: #f50057;
+  background-color: #24a8b9;
   color: white;
   border-radius: 5px;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 5px 5px;
   cursor: pointer;
-  border: 1px solid #f50057;
-  font-size: 25px;
+  border: 1px solid #24a8b9;
+  font-size: 18px;
   margin: 20px 5px;
   white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .mobilenet-demo-container .input-button:hover {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 1px 8px rgba(219, 219, 219, 0.3),
+    0 5px 10px rgba(207, 207, 207, 0.22);
 }
 .mobilenet-demo-container .input-button:focus {
   outline: none;
@@ -91,21 +93,22 @@ body {
 .mobilenet-demo-container .demo-output {
   display: flex;
   width: 100%;
-  background-color: #3949ab;
+  background-color: #24a8b9;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 .mobilenet-demo-container .out-box {
   display: table-cell;
   width: 50%;
   margin: 0px auto;
-  padding: 0px 10px 10px 10px;
-  background-color: #3949ab;
+  padding: 10px 10px 10px 10px;
+  background-color: #2b3436;
 }
 .mobilenet-demo-container .out-box p {
   color: white;
   margin-top: 0px;
   margin-bottom: 0px !important;
-  font-size: 25px;
+  font-size: 20px;
 }
 .mobilenet-demo-container .out-box b {
   color: #ffcc00;
@@ -128,11 +131,13 @@ body {
 }
 .mobilenet-demo-container .predict-button {
   background-color: #ffcc00;
-  border: 1px solid #ffcc00;
+  border: 2px solid black;
   color: black;
 }
 .mobilenet-demo-container .predict-button:hover {
-  background-color: #ffcc00;
+  background-color: #2b3436;
+  color: white;
+  border-color: white;
 }
 .mobilenet-demo-container #demo-progress {
   width: 100%;
@@ -170,11 +175,15 @@ body {
   font-size: 20px;
 }
 
-#chart_box {
-  margin-top: 50px;
+#chart-box {
+  margin: 10px;
   background-color: #2b3436;
-  padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
+  height: 400px;
+}
+
+.test-image {
+  padding-top: 20px;
 }
 
 /*# sourceMappingURL=app.css.map */
