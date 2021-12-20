@@ -11,3 +11,5 @@ __pycache__/
 /sc_detector/data/raw
 
 /sc_detector/data/base_dir
+
+/sc_detector/artifacts/mobilen_model.h5
