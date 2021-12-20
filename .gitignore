@@ -12,4 +12,4 @@ __pycache__/
 
 /sc_detector/data/base_dir
 
-/sc_detector/artifacts/mobilen_model.h5
+/sc_detector/artifacts/mn_model.h5
