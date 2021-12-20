@@ -184,7 +184,7 @@ function loadDemoImage() {
   document.getElementById("select-file-box").style.display = "table-cell";
   document.getElementById("predict-list").innerHTML = "";
 
-  base_path = "./images/samplepic.jpg";
+  base_path = "./images/nv_samplepic.jpg";
   // maximum = 4;
   // minimum = 1;
   // var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
