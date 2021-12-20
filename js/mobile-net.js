@@ -7,7 +7,7 @@ async function loadModel() {
   modelName = "mobilenet";
   model = undefined;
   model = await tf.loadLayersModel(
-    "./sc_detector/artifacts/tfjs/my_model/model.json"
+    "./sc_detector/artifacts/tfjs/mobilen_model/model.json"
   );
   loader.style.display = "none";
   load_button.disabled = true;
@@ -164,7 +164,7 @@ async function predButton() {
 function preprocessImage(image, modelName) {
   let tensor = tf.browser
     .fromPixels(image)
-    .resizeNearestNeighbor([28, 28])
+    .resizeNearestNeighbor([224, 224])
     .toFloat();
 
   if (modelName === undefined) {
