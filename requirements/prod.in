@@ -1,15 +1,6 @@
-tensorflow-cpu
-tensorflowjs
 numpy
 requests
-fastapi
-uvicorn
-python-dotenv
-aiofiles
-python-multipart
-jinja2
-Markdown
-pytest
 Pillow
 IPython
 imutils
+tf2onnx
