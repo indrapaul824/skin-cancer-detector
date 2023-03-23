@@ -5,3 +5,6 @@ A Web Application that uses Computer Vision and Deep Learning to identify the th
 Check out the Application
   - Skin Cancer Detector: https://indrap24.github.io/skin-cancer-detector/
   - About the Project: https://indrap24.github.io/skin-cancer-detector/faq.html
+
+> **Warning**
+> This is a prototype. Not suitable for regular usage.
