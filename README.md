@@ -1,5 +1,7 @@
 <h1 align=center> Skin Cancer Analyzer and Detector </h1>
 
+<div style="text-align: center"><img src="./7094784.jpg" width=400px></div>
+
 A Web Application that uses Computer Vision and Deep Learning to identify the three highest probability diagnoses for a skin lesion image input by the User.
 
 > **Warning**
