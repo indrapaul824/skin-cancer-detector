@@ -20,3 +20,16 @@ con-tfjs:
                        $$model_dir.h5 \
                        $$target_dir
 	@echo -n "TFJS model.json saved at './sc_detector/artifacts/tfjs'"
+
+
+# Convert keras model to tflite
+con-saved:
+	python3 sc_detector/scripts/h5_to_tflite.py
+
+# Convert keras model to ONNX
+con-onnx:
+	python3 -m tf2onnx.convert \
+		--tag serve \
+		--signature_def serving_default \
+		--saved-model sc_detector/artifacts/saved_model \
+		--output sc_detector/artifacts/ONNX/model.onnx
